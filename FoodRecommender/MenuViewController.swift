@@ -1,0 +1,87 @@
+//
+//  SecondViewController.swift
+//  FoodRecommender
+//
+//  Created by Joaquin Castro-Calvo on 3/4/16.
+//  Copyright © 2016 Joaquin Castro-Calvo. All rights reserved.
+//
+
+import UIKit
+import LiquidFloatingActionButton
+import Social
+
+class MenuViewController: UIViewController, LiquidFloatingActionButtonDelegate, LiquidFloatingActionButtonDataSource {
+
+    var floatingActionButton: LiquidFloatingActionButton!
+    var cells: [LiquidFloatingCell] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        let createButton: (CGRect, LiquidFloatingActionButtonAnimateStyle) -> LiquidFloatingActionButton = { (frame, style) in
+            let floatingActionButton = LiquidFloatingActionButton(frame: frame)
+            floatingActionButton.animateStyle = style
+            floatingActionButton.dataSource = self
+            floatingActionButton.delegate = self
+            return floatingActionButton
+        }
+        
+        let cellFactory: (String) -> LiquidFloatingCell = { (iconName) in
+            return LiquidFloatingCell(icon: UIImage(named: iconName)!)
+        }
+        cells.append(cellFactory("fa-map_48_0_f44024_none.png"))
+        cells.append(cellFactory("brandico-twitter-bird_48_0_f44024_none.png"))
+        cells.append(cellFactory("brandico-facebook_48_0_f44024_none.png"))
+        
+        let floatingFrame = CGRect(x: self.view.frame.width - 70, y: (self.view.frame.height - (self.tabBarController?.tabBar.frame.height)! - 60), width: 56, height: 56)
+        let bottomRightButton = createButton(floatingFrame, .Up)
+        
+        self.view.addSubview(bottomRightButton)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor(red: 243/255, green: 58/255, blue: 36/255, alpha: 1)]
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 141/255, green: 198/255, blue: 63/255, alpha: 1)
+        self.view.backgroundColor = UIColor(red: 229/250, green: 229/250, blue: 229/250, alpha: 1)
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    func numberOfCells(liquidFloatingActionButton: LiquidFloatingActionButton) -> Int{
+        return cells.count
+    }
+    
+    func cellForIndex(index: Int) -> LiquidFloatingCell{
+        return cells[index]
+    }
+    
+    func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int){
+        liquidFloatingActionButton.close()
+        if(index == 1){
+            if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter){
+                let twitterSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+                twitterSheet.setInitialText("Share on Twitter")
+                self.presentViewController(twitterSheet, animated: true, completion: nil)
+            } else {
+                let alert = UIAlertController(title: "Accounts", message: "Please login to a Twitter account to share.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+        }else if(index == 2){
+            if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook){
+                let facebookSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+                facebookSheet.setInitialText("Share on Facebook")
+                self.presentViewController(facebookSheet, animated: true, completion: nil)
+            } else {
+                let alert = UIAlertController(title: "Accounts", message: "Please login to a Facebook account to share.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+        }
+
+    }
+
+}
+

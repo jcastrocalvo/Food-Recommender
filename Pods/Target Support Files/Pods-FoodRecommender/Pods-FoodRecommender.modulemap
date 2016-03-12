@@ -1,0 +1,6 @@
+framework module Pods_FoodRecommender {
+  umbrella header "Pods-FoodRecommender-umbrella.h"
+
+  export *
+  module * { export * }
+}
