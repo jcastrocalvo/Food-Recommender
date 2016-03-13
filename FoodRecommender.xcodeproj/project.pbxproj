@@ -27,6 +27,9 @@
 		C2B27E7E1C9534C100173352 /* ion-android-done_38_0_fafafa_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B27E7D1C9534C100173352 /* ion-android-done_38_0_fafafa_none.png */; };
 		C2B27E801C953E9500173352 /* fa-camera_40_0_3f51b5_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B27E7F1C953E9500173352 /* fa-camera_40_0_3f51b5_none.png */; };
 		C2B27E821C953EC700173352 /* pe-7s-photo-gallery_40_0_3f51b5_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B27E811C953EC700173352 /* pe-7s-photo-gallery_40_0_3f51b5_none.png */; };
+		C2B27E851C95E31E00173352 /* MenuListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B27E841C95E31E00173352 /* MenuListTableViewController.swift */; };
+		C2B27E871C95E8BC00173352 /* NewMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B27E861C95E8BC00173352 /* NewMenuViewController.swift */; };
+		C2B27E891C95EBEC00173352 /* CardCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B27E881C95EBEC00173352 /* CardCellTableViewCell.swift */; };
 		C2C524B41C9519360083E98E /* NewMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C524B31C9519360083E98E /* NewMealViewController.swift */; };
 		FF6633776757E37D84E9C9A8 /* Pods_FoodRecommender.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B411777374AC8C0C6C9469 /* Pods_FoodRecommender.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +59,9 @@
 		C2B27E7D1C9534C100173352 /* ion-android-done_38_0_fafafa_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ion-android-done_38_0_fafafa_none.png"; sourceTree = "<group>"; };
 		C2B27E7F1C953E9500173352 /* fa-camera_40_0_3f51b5_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fa-camera_40_0_3f51b5_none.png"; sourceTree = "<group>"; };
 		C2B27E811C953EC700173352 /* pe-7s-photo-gallery_40_0_3f51b5_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pe-7s-photo-gallery_40_0_3f51b5_none.png"; sourceTree = "<group>"; };
+		C2B27E841C95E31E00173352 /* MenuListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuListTableViewController.swift; sourceTree = "<group>"; };
+		C2B27E861C95E8BC00173352 /* NewMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMenuViewController.swift; sourceTree = "<group>"; };
+		C2B27E881C95EBEC00173352 /* CardCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCellTableViewCell.swift; sourceTree = "<group>"; };
 		C2C524B31C9519360083E98E /* NewMealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMealViewController.swift; sourceTree = "<group>"; };
 		C3B411777374AC8C0C6C9469 /* Pods_FoodRecommender.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodRecommender.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -139,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				C2A27DC21C9352AC005E2B53 /* CardCollectionViewCell.swift */,
+				C2B27E881C95EBEC00173352 /* CardCellTableViewCell.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -147,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				C27D597E1C8A146200D48591 /* MenuViewController.swift */,
+				C2B27E841C95E31E00173352 /* MenuListTableViewController.swift */,
+				C2B27E861C95E8BC00173352 /* NewMenuViewController.swift */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -307,7 +316,10 @@
 				C27D597F1C8A146200D48591 /* MenuViewController.swift in Sources */,
 				C27D59921C8A14EA00D48591 /* DataModel.xcdatamodeld in Sources */,
 				C27D597B1C8A146100D48591 /* AppDelegate.swift in Sources */,
+				C2B27E871C95E8BC00173352 /* NewMenuViewController.swift in Sources */,
 				C2A27DC31C9352AC005E2B53 /* CardCollectionViewCell.swift in Sources */,
+				C2B27E851C95E31E00173352 /* MenuListTableViewController.swift in Sources */,
+				C2B27E891C95EBEC00173352 /* CardCellTableViewCell.swift in Sources */,
 				C27D597D1C8A146200D48591 /* MealsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

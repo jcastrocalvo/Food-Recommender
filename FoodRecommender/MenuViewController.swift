@@ -18,7 +18,7 @@ class MenuViewController: UIViewController, LiquidFloatingActionButtonDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //liquid start
         let createButton: (CGRect, LiquidFloatingActionButtonAnimateStyle) -> LiquidFloatingActionButton = { (frame, style) in
             let floatingActionButton = LiquidFloatingActionButton(frame: frame)
             floatingActionButton.animateStyle = style
@@ -38,9 +38,13 @@ class MenuViewController: UIViewController, LiquidFloatingActionButtonDelegate, 
         let bottomRightButton = createButton(floatingFrame, .Up)
         
         self.view.addSubview(bottomRightButton)
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor(red: 243/255, green: 58/255, blue: 36/255, alpha: 1)]
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 141/255, green: 198/255, blue: 63/255, alpha: 1)
-        self.view.backgroundColor = UIColor(red: 229/250, green: 229/250, blue: 229/250, alpha: 1)
+        //liquid end
+        
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)]
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 63/255, green: 81/255, blue: 181/255, alpha: 1)
+        self.tabBarController?.tabBar.barTintColor = UIColor(red: 63/255, green: 81/255, blue: 181/255, alpha: 1)
+        self.tabBarController?.tabBar.tintColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -80,6 +84,7 @@ class MenuViewController: UIViewController, LiquidFloatingActionButtonDelegate, 
                 self.presentViewController(alert, animated: true, completion: nil)
             }
         }else{
+            performSegueWithIdentifier("addNewMenuItem", sender: nil)
         }
 
     }
