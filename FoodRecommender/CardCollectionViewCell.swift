@@ -11,5 +11,5 @@ import UIKit
 class CardCollectionViewCell: UICollectionViewCell {
     @IBOutlet var TitleLabel: UILabel!
     @IBOutlet var Image: UIImageView!
-    @IBOutlet weak var DescriptionLabel: UITextView!
+    @IBOutlet var DescriptionLabel: UITextView!
 }

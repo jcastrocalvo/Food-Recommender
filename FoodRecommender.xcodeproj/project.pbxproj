@@ -93,7 +93,6 @@
 		C27D596E1C8A146100D48591 = {
 			isa = PBXGroup;
 			children = (
-				C2C524B21C9519120083E98E /* Meals */,
 				C27D598E1C8A14C600D48591 /* CoreData.framework */,
 				C27D59791C8A146100D48591 /* FoodRecommender */,
 				C27D59781C8A146100D48591 /* Products */,
@@ -113,6 +112,7 @@
 		C27D59791C8A146100D48591 /* FoodRecommender */ = {
 			isa = PBXGroup;
 			children = (
+				C2C524B21C9519120083E98E /* Meals */,
 				C2A27DC11C935280005E2B53 /* Helpers */,
 				C27697701C8A1FC300A95368 /* Images */,
 				C27D597A1C8A146100D48591 /* AppDelegate.swift */,
@@ -141,6 +141,7 @@
 				C2C524B31C9519360083E98E /* NewMealViewController.swift */,
 			);
 			name = Meals;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		E8A78E761D7A2CA1C074F6D6 /* Pods */ = {
