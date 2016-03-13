@@ -9,6 +9,7 @@
 import UIKit
 import LiquidFloatingActionButton
 import Social
+import CoreData
 
 class MealsViewController: UIViewController, LiquidFloatingActionButtonDelegate, LiquidFloatingActionButtonDataSource, UICollectionViewDataSource, UICollectionViewDelegate  {
     
@@ -17,6 +18,7 @@ class MealsViewController: UIViewController, LiquidFloatingActionButtonDelegate,
     
     var floatingActionButton: LiquidFloatingActionButton!
     var cells: [LiquidFloatingCell] = []
+    var meals = [NSManagedObject]()
     @IBOutlet var tabBar: UIView!
     @IBOutlet var collectionView: UICollectionView!
     
@@ -52,12 +54,35 @@ class MealsViewController: UIViewController, LiquidFloatingActionButtonDelegate,
         self.collectionView.dataSource = self
         self.collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //1
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let fetchRequest = NSFetchRequest(entityName: "Meal")
+        
+        //3
+        do {
+            let results =
+            try managedContext.executeFetchRequest(fetchRequest)
+            meals = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        self.collectionView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    //
     //Liquid button start
     func numberOfCells(liquidFloatingActionButton: LiquidFloatingActionButton) -> Int{
         return cells.count
@@ -95,32 +120,28 @@ class MealsViewController: UIViewController, LiquidFloatingActionButtonDelegate,
         }
     }
     //liquid button end
-    
+    //
     
     //CollectionView start
     // tell the collection view how many cells to make
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.items.count
+        return meals.count
     }
     
     // make a cell for each cell index path
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
-        // get a reference to our storyboard cell
-        //let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CardCollectionViewCell
         let cell:CardCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! CardCollectionViewCell
-        
-//        cell.frame = CGRect(x: self.collectionView.frame.width * 0.1, y: self.collectionView.frame.height * 0.03, width: self.collectionView.frame.width - (self.collectionView.frame.width * 0.2), height: self.collectionView.frame.height * 0.33)
-        
+        let meal = meals[indexPath.row]
         cell.layer.shadowColor = UIColor.blackColor().CGColor
         cell.layer.shadowOffset = CGSize(width: 0, height: 4)
         cell.layer.shadowOpacity = 0.8
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.layer.bounds, cornerRadius: 2).CGPath
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
-        cell.TitleLabel.text = items[indexPath.row]
-        cell.backgroundColor = UIColor(red: 63/255, green: 81/255, blue: 181/255, alpha: 0.9) // make cell more visible in our example project
-        cell.Image.image = UIImage(named: "lsf-meal_48_0_f44024_none.png")
-        cell.DescriptionLabel.text = "This is a very long sentence that I hope it gets pushed down but we will see if this even works now that I think about it, it probably will not work at all."
+        cell.TitleLabel.text = meal.valueForKey("mealTitle") as? String
+        cell.DescriptionLabel.text = meal.valueForKey("mealDescription") as? String
+        cell.DescriptionLabel.backgroundColor = UIColor(red: 63/255, green: 81/255, blue: 181/255, alpha: 0.9)
+        cell.backgroundColor = UIColor(red: 63/255, green: 81/255, blue: 181/255, alpha: 0.9)
+        //cell.Image.image = UIImage(named: "lsf-meal_48_0_f44024_none.png")
         
         return cell
     }

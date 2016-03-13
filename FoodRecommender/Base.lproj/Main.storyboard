@@ -83,18 +83,12 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Vqb-Of-uot" customClass="CardCollectionViewCell" customModule="FoodRecommender" customModuleProvider="target">
-                                        <rect key="frame" x="130.5" y="64" width="339.5" height="155"/>
+                                        <rect key="frame" x="131" y="64" width="340" height="155"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="339.5" height="155"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="340" height="155"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRf-pe-o6k">
-                                                    <rect key="frame" x="140" y="46" width="192" height="109"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TT8-es-EYe">
                                                     <rect key="frame" x="140" y="14" width="192" height="21"/>
                                                     <constraints>
@@ -110,24 +104,30 @@
                                                         <constraint firstAttribute="width" constant="124" id="e4h-uJ-MwG"/>
                                                     </constraints>
                                                 </imageView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yIL-mH-rxC">
+                                                    <rect key="frame" x="139" y="38" width="193" height="109"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="TT8-es-EYe" firstAttribute="trailing" secondItem="FRf-pe-o6k" secondAttribute="trailing" id="J3A-3D-74W"/>
-                                            <constraint firstItem="Jnj-F8-zy1" firstAttribute="bottom" secondItem="Vqb-Of-uot" secondAttribute="bottomMargin" id="MzW-eg-BYA"/>
-                                            <constraint firstItem="FRf-pe-o6k" firstAttribute="top" secondItem="TT8-es-EYe" secondAttribute="bottom" constant="11" id="ZWh-u0-KP7"/>
-                                            <constraint firstAttribute="bottom" secondItem="FRf-pe-o6k" secondAttribute="bottom" id="bCv-GX-DjL"/>
-                                            <constraint firstItem="TT8-es-EYe" firstAttribute="top" secondItem="Vqb-Of-uot" secondAttribute="topMargin" constant="6" id="gaI-Qa-Uta"/>
+                                            <constraint firstItem="TT8-es-EYe" firstAttribute="top" secondItem="Vqb-Of-uot" secondAttribute="topMargin" constant="6" id="9ep-Sa-wmh"/>
+                                            <constraint firstItem="yIL-mH-rxC" firstAttribute="bottom" secondItem="Vqb-Of-uot" secondAttribute="bottomMargin" id="Jo0-Q7-DUy"/>
+                                            <constraint firstItem="yIL-mH-rxC" firstAttribute="top" secondItem="TT8-es-EYe" secondAttribute="bottom" constant="3" id="RSm-pb-HpX"/>
+                                            <constraint firstItem="Jnj-F8-zy1" firstAttribute="bottom" secondItem="yIL-mH-rxC" secondAttribute="bottom" id="iVN-cF-HXv"/>
                                             <constraint firstItem="TT8-es-EYe" firstAttribute="leading" secondItem="Jnj-F8-zy1" secondAttribute="trailing" constant="8" symbolic="YES" id="iuh-DH-ftb"/>
-                                            <constraint firstItem="TT8-es-EYe" firstAttribute="trailing" secondItem="Vqb-Of-uot" secondAttribute="trailingMargin" id="lvx-PN-hke"/>
-                                            <constraint firstItem="Jnj-F8-zy1" firstAttribute="top" secondItem="Vqb-Of-uot" secondAttribute="topMargin" id="o26-aZ-JIw"/>
-                                            <constraint firstItem="TT8-es-EYe" firstAttribute="leading" secondItem="FRf-pe-o6k" secondAttribute="leading" id="syv-sI-ew8"/>
-                                            <constraint firstItem="Jnj-F8-zy1" firstAttribute="leading" secondItem="Vqb-Of-uot" secondAttribute="leadingMargin" id="xGc-uI-sQc"/>
+                                            <constraint firstItem="TT8-es-EYe" firstAttribute="trailing" secondItem="yIL-mH-rxC" secondAttribute="trailing" id="kTe-Gg-R1m"/>
+                                            <constraint firstItem="Jnj-F8-zy1" firstAttribute="leading" secondItem="Vqb-Of-uot" secondAttribute="leadingMargin" id="n5w-ZY-jnQ"/>
+                                            <constraint firstItem="TT8-es-EYe" firstAttribute="trailing" secondItem="Vqb-Of-uot" secondAttribute="trailingMargin" id="tz0-Hd-Hxg"/>
+                                            <constraint firstItem="yIL-mH-rxC" firstAttribute="centerX" secondItem="TT8-es-EYe" secondAttribute="centerX" id="wTB-C8-2gU"/>
+                                            <constraint firstItem="Jnj-F8-zy1" firstAttribute="top" secondItem="Vqb-Of-uot" secondAttribute="topMargin" id="yga-ml-ivd"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="DescriptionLabel" destination="FRf-pe-o6k" id="KjU-qs-UDV"/>
+                                            <outlet property="DescriptionLabel" destination="yIL-mH-rxC" id="sIx-Va-rpx"/>
                                             <outlet property="Image" destination="Jnj-F8-zy1" id="gdA-7U-Ski"/>
                                             <outlet property="TitleLabel" destination="TT8-es-EYe" id="2DQ-Wj-pzV"/>
                                         </connections>

@@ -57,6 +57,7 @@ class NewMealViewController: UIViewController {
             print("Could not save \(error), \(error.userInfo)")
         }
 
+        navigationController?.popViewControllerAnimated(true)
     }
     
     
