@@ -25,7 +25,7 @@ class NewMenuViewController: UIViewController,UIImagePickerControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBarHidden = true
+        
         imagePicker.delegate = self
         
         if(menu == nil){
@@ -52,7 +52,9 @@ class NewMenuViewController: UIViewController,UIImagePickerControllerDelegate, U
         cells.append(cellFactory("brandico-facebook_48_0_f44024_none.png"))
         let floatingFrame = CGRect(x: self.view.frame.width - 70, y: (self.view.frame.height - (self.tabBarController?.tabBar.frame.height)! - 60), width: 56, height: 56)
         let bottomRightButton = createButton(floatingFrame, .Up)
+        //self.parentViewController?.view.addSubview(bottomRightButton)
         self.view.addSubview(bottomRightButton)
+        self.navigationController?.navigationBarHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,11 +64,13 @@ class NewMenuViewController: UIViewController,UIImagePickerControllerDelegate, U
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.parentViewController?.navigationController?.navigationBarHidden = true
         self.navigationController?.navigationBarHidden = true
     }
     override func viewWillDisappear(animated: Bool)
     {
         super.viewWillDisappear(animated)
+        self.parentViewController?.navigationController?.navigationBarHidden = true
         self.navigationController?.navigationBarHidden = false
     }
     

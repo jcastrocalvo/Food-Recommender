@@ -5,7 +5,15 @@
         <attribute name="mealImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="mealTitle" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Menu" syncable="YES">
+        <attribute name="menuDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="menuImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="menuLatitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="menuLongitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="menuName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Meal" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Menu" positionX="-54" positionY="18" width="128" height="120"/>
     </elements>
 </model>

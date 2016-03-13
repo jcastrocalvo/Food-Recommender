@@ -16,7 +16,6 @@
 		C27D597B1C8A146100D48591 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D597A1C8A146100D48591 /* AppDelegate.swift */; };
 		C27D597D1C8A146200D48591 /* MealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D597C1C8A146100D48591 /* MealsViewController.swift */; };
 		C27D597F1C8A146200D48591 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D597E1C8A146200D48591 /* MenuViewController.swift */; };
-		C27D59821C8A146200D48591 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C27D59801C8A146200D48591 /* Main.storyboard */; };
 		C27D59841C8A146200D48591 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C27D59831C8A146200D48591 /* Assets.xcassets */; };
 		C27D59871C8A146200D48591 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C27D59851C8A146200D48591 /* LaunchScreen.storyboard */; };
 		C27D598F1C8A14C600D48591 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C27D598E1C8A14C600D48591 /* CoreData.framework */; };
@@ -30,6 +29,7 @@
 		C2B27E851C95E31E00173352 /* MenuListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B27E841C95E31E00173352 /* MenuListTableViewController.swift */; };
 		C2B27E871C95E8BC00173352 /* NewMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B27E861C95E8BC00173352 /* NewMenuViewController.swift */; };
 		C2B27E891C95EBEC00173352 /* CardCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B27E881C95EBEC00173352 /* CardCellTableViewCell.swift */; };
+		C2B27E8E1C960B4300173352 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B27E8D1C960B4300173352 /* Main.storyboard */; };
 		C2C524B41C9519360083E98E /* NewMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C524B31C9519360083E98E /* NewMealViewController.swift */; };
 		FF6633776757E37D84E9C9A8 /* Pods_FoodRecommender.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B411777374AC8C0C6C9469 /* Pods_FoodRecommender.framework */; };
 /* End PBXBuildFile section */
@@ -47,7 +47,6 @@
 		C27D597A1C8A146100D48591 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C27D597C1C8A146100D48591 /* MealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MealsViewController.swift; path = FoodRecommender/MealsViewController.swift; sourceTree = "<group>"; };
 		C27D597E1C8A146200D48591 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		C27D59811C8A146200D48591 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C27D59831C8A146200D48591 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C27D59861C8A146200D48591 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C27D59881C8A146200D48591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,6 +61,7 @@
 		C2B27E841C95E31E00173352 /* MenuListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuListTableViewController.swift; sourceTree = "<group>"; };
 		C2B27E861C95E8BC00173352 /* NewMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMenuViewController.swift; sourceTree = "<group>"; };
 		C2B27E881C95EBEC00173352 /* CardCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCellTableViewCell.swift; sourceTree = "<group>"; };
+		C2B27E8D1C960B4300173352 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C2C524B31C9519360083E98E /* NewMealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMealViewController.swift; sourceTree = "<group>"; };
 		C3B411777374AC8C0C6C9469 /* Pods_FoodRecommender.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodRecommender.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -132,7 +132,7 @@
 				C2A27DC11C935280005E2B53 /* Helpers */,
 				C27697701C8A1FC300A95368 /* Images */,
 				C27D597A1C8A146100D48591 /* AppDelegate.swift */,
-				C27D59801C8A146200D48591 /* Main.storyboard */,
+				C2B27E8D1C960B4300173352 /* Main.storyboard */,
 				C27D59831C8A146200D48591 /* Assets.xcassets */,
 				C27D59851C8A146200D48591 /* LaunchScreen.storyboard */,
 				C27D59881C8A146200D48591 /* Info.plist */,
@@ -247,8 +247,8 @@
 				C241F5FD1C9222D5006897C9 /* brandico-facebook_48_0_f44024_none.png in Resources */,
 				C2B27E801C953E9500173352 /* fa-camera_40_0_3f51b5_none.png in Resources */,
 				C27D59841C8A146200D48591 /* Assets.xcassets in Resources */,
+				C2B27E8E1C960B4300173352 /* Main.storyboard in Resources */,
 				C241F5FF1C922307006897C9 /* lsf-meal_30_30_f44024_none.png in Resources */,
-				C27D59821C8A146200D48591 /* Main.storyboard in Resources */,
 				C2B27E7E1C9534C100173352 /* ion-android-done_38_0_fafafa_none.png in Resources */,
 				C241F6031C922646006897C9 /* lsf-meal_48_0_f44024_none.png in Resources */,
 				C241F5FC1C9222D5006897C9 /* brandico-twitter-bird_48_0_f44024_none.png in Resources */,
@@ -327,14 +327,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C27D59801C8A146200D48591 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C27D59811C8A146200D48591 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C27D59851C8A146200D48591 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -16,7 +16,7 @@ class MenuListTableViewController: UITableViewController, LiquidFloatingActionBu
     var floatingActionButton: LiquidFloatingActionButton!
     var cells: [LiquidFloatingCell] = []
     var menus = [NSManagedObject]()
-    var mealToSend: NSManagedObject!
+    var menuToSend: NSManagedObject!
     
     
     override func viewDidLoad() {
@@ -62,6 +62,11 @@ class MenuListTableViewController: UITableViewController, LiquidFloatingActionBu
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func viewWillDisappear(animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        //self.navigationController?.navigationBarHidden = false
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -84,6 +89,7 @@ class MenuListTableViewController: UITableViewController, LiquidFloatingActionBu
             print("Could not fetch \(error), \(error.userInfo)")
         }
         self.tableView.reloadData()
+        self.navigationController?.navigationBarHidden = false
     }
     
     //MARK: LiquidFloatingButton
@@ -135,18 +141,43 @@ class MenuListTableViewController: UITableViewController, LiquidFloatingActionBu
         // #warning Incomplete implementation, return the number of rows
         return menus.count
     }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 15
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            menus.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        managedContext.deleteObject(menus[indexPath.row])
+        
+        do {
+            try managedContext.save()
+            print("saved!")
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
 
-
+    }
+    
+    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        NSLog("You selected cell number: \(indexPath.row)!")
+        menuToSend = menus[indexPath.row];
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! CardCellTableViewCell
         let menu = menus[indexPath.row]
 
         cell.cellTitle.text = menu.valueForKey("menuName") as? String
         cell.cellDescription.text = menu.valueForKey("menuDescription") as? String
-        if(menu.valueForKey("menuImage") != nil){
-            let imageData: NSData = menu.valueForKey("menuImage") as! NSData
-            cell.imageView?.image = UIImage(data: imageData)
-        }
         cell.cellTitle.textColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
         cell.cellDescription.textColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
         cell.cellDescription.backgroundColor = UIColor(red: 255/255, green: 64/255, blue: 129/255, alpha: 1)
@@ -159,19 +190,7 @@ class MenuListTableViewController: UITableViewController, LiquidFloatingActionBu
         cell.layer.shadowOpacity = 0.5
         return cell
     }
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {

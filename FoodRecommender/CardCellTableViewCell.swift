@@ -9,13 +9,11 @@
 import UIKit
 
 class CardCellTableViewCell: UITableViewCell {
+    
 
     @IBOutlet var cellTitle: UILabel!
 
     @IBOutlet var cellDescription: UITextView!
-    
-    @IBOutlet var cellImage: UIImageView!
-
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

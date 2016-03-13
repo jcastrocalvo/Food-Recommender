@@ -9,15 +9,32 @@
 import UIKit
 import LiquidFloatingActionButton
 import Social
+import CoreData
 
 class MenuViewController: UIViewController, LiquidFloatingActionButtonDelegate, LiquidFloatingActionButtonDataSource {
 
     var floatingActionButton: LiquidFloatingActionButton!
     var cells: [LiquidFloatingCell] = []
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var descriptionBox: UITextView!
+    @IBOutlet var titleBox: UILabel!
+    var chosenMenu: NSManagedObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        if (chosenMenu != nil){
+            descriptionBox.text = chosenMenu.valueForKey("menuDescription") as? String
+            titleBox.text = chosenMenu.valueForKey("menuTitle") as? String
+            if(chosenMenu.valueForKey("menuImage") != nil){
+                let imageData: NSData = chosenMenu.valueForKey("menuImage") as! NSData
+                imageView.image = UIImage(data: imageData)
+            }
+        }else{
+            descriptionBox.hidden = true
+            titleBox.hidden = true
+        }
         //liquid start
         let createButton: (CGRect, LiquidFloatingActionButtonAnimateStyle) -> LiquidFloatingActionButton = { (frame, style) in
             let floatingActionButton = LiquidFloatingActionButton(frame: frame)
@@ -46,8 +63,22 @@ class MenuViewController: UIViewController, LiquidFloatingActionButtonDelegate, 
         self.tabBarController?.tabBar.barTintColor = UIColor(red: 63/255, green: 81/255, blue: 181/255, alpha: 1)
         self.tabBarController?.tabBar.tintColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.refreshUI()
     }
-
+    
+    func refreshUI() {
+        if (chosenMenu != nil){
+            descriptionBox.text = chosenMenu.valueForKey("menuDescription") as? String
+            titleBox.text = chosenMenu.valueForKey("menuTitle") as? String
+            if(chosenMenu.valueForKey("menuImage") != nil){
+                let imageData: NSData = chosenMenu.valueForKey("menuImage") as! NSData
+                imageView.image = UIImage(data: imageData)
+            }
+        }
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
