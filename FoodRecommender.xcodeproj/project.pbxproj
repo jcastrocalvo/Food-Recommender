@@ -22,6 +22,7 @@
 		C27D598F1C8A14C600D48591 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C27D598E1C8A14C600D48591 /* CoreData.framework */; };
 		C27D59921C8A14EA00D48591 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C27D59901C8A14EA00D48591 /* DataModel.xcdatamodeld */; };
 		C2A27DC31C9352AC005E2B53 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A27DC21C9352AC005E2B53 /* CardCollectionViewCell.swift */; };
+		C2C524B41C9519360083E98E /* NewMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C524B31C9519360083E98E /* NewMealViewController.swift */; };
 		FF6633776757E37D84E9C9A8 /* Pods_FoodRecommender.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B411777374AC8C0C6C9469 /* Pods_FoodRecommender.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +37,7 @@
 		C241F6021C922646006897C9 /* lsf-meal_48_0_f44024_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lsf-meal_48_0_f44024_none.png"; sourceTree = "<group>"; };
 		C27D59771C8A146100D48591 /* FoodRecommender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodRecommender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C27D597A1C8A146100D48591 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C27D597C1C8A146100D48591 /* MealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewController.swift; sourceTree = "<group>"; };
+		C27D597C1C8A146100D48591 /* MealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MealsViewController.swift; path = FoodRecommender/MealsViewController.swift; sourceTree = "<group>"; };
 		C27D597E1C8A146200D48591 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		C27D59811C8A146200D48591 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C27D59831C8A146200D48591 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +46,7 @@
 		C27D598E1C8A14C600D48591 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C27D59911C8A14EA00D48591 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		C2A27DC21C9352AC005E2B53 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		C2C524B31C9519360083E98E /* NewMealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMealViewController.swift; sourceTree = "<group>"; };
 		C3B411777374AC8C0C6C9469 /* Pods_FoodRecommender.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodRecommender.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 		C27D596E1C8A146100D48591 = {
 			isa = PBXGroup;
 			children = (
+				C2C524B21C9519120083E98E /* Meals */,
 				C27D598E1C8A14C600D48591 /* CoreData.framework */,
 				C27D59791C8A146100D48591 /* FoodRecommender */,
 				C27D59781C8A146100D48591 /* Products */,
@@ -107,7 +110,6 @@
 				C2A27DC11C935280005E2B53 /* Helpers */,
 				C27697701C8A1FC300A95368 /* Images */,
 				C27D597A1C8A146100D48591 /* AppDelegate.swift */,
-				C27D597C1C8A146100D48591 /* MealsViewController.swift */,
 				C27D597E1C8A146200D48591 /* MenuViewController.swift */,
 				C27D59801C8A146200D48591 /* Main.storyboard */,
 				C27D59831C8A146200D48591 /* Assets.xcassets */,
@@ -124,6 +126,15 @@
 				C2A27DC21C9352AC005E2B53 /* CardCollectionViewCell.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		C2C524B21C9519120083E98E /* Meals */ = {
+			isa = PBXGroup;
+			children = (
+				C27D597C1C8A146100D48591 /* MealsViewController.swift */,
+				C2C524B31C9519360083E98E /* NewMealViewController.swift */,
+			);
+			name = Meals;
 			sourceTree = "<group>";
 		};
 		E8A78E761D7A2CA1C074F6D6 /* Pods */ = {
@@ -263,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2C524B41C9519360083E98E /* NewMealViewController.swift in Sources */,
 				C27D597F1C8A146200D48591 /* MenuViewController.swift in Sources */,
 				C27D59921C8A14EA00D48591 /* DataModel.xcdatamodeld in Sources */,
 				C27D597B1C8A146100D48591 /* AppDelegate.swift in Sources */,

@@ -89,6 +89,9 @@ class MealsViewController: UIViewController, LiquidFloatingActionButtonDelegate,
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
             }
+        }else{
+            
+            performSegueWithIdentifier("addNewMeal", sender: nil)
         }
     }
     //liquid button end

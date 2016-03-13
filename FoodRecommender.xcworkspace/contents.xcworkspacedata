@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Meal+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Meal.swift">
+   </FileRef>
+   <FileRef
       location = "group:FoodRecommender.xcodeproj">
    </FileRef>
    <FileRef

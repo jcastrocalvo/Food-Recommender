@@ -79,6 +79,7 @@ class MenuViewController: UIViewController, LiquidFloatingActionButtonDelegate, 
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
             }
+        }else{
         }
 
     }
