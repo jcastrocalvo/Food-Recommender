@@ -24,6 +24,7 @@ class MealsViewController: UIViewController, LiquidFloatingActionButtonDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.view.backgroundColor = UIColor(red: 0/255, green: 150/255, blue: 136/255, alpha: 1)
         self.automaticallyAdjustsScrollViewInsets = false
         //liquidbutton start
         let createButton: (CGRect, LiquidFloatingActionButtonAnimateStyle) -> LiquidFloatingActionButton = { (frame, style) in
@@ -33,6 +34,7 @@ class MealsViewController: UIViewController, LiquidFloatingActionButtonDelegate,
             floatingActionButton.delegate = self
             return floatingActionButton
         }
+        
         let cellFactory: (String) -> LiquidFloatingCell = { (iconName) in
             return LiquidFloatingCell(icon: UIImage(named: iconName)!)
         }

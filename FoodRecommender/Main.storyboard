@@ -41,7 +41,7 @@
                                 <rect key="frame" x="20" y="439" width="560" height="104"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="104" id="r2B-xA-mu0"/>
+                                    <constraint firstAttribute="height" constant="104" id="DPg-lO-4S8"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -50,28 +50,28 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy2-oj-7CX">
                                 <rect key="frame" x="20" y="410" width="560" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="g9M-gr-3WP"/>
+                                    <constraint firstAttribute="height" constant="21" id="pe0-4v-SLP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pt4-0P-uQD">
-                                <rect key="frame" x="20" y="28" width="560" height="370"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="402"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4oc-6O-WxX" firstAttribute="trailing" secondItem="IZH-Ze-Tpd" secondAttribute="trailingMargin" id="2ma-wF-CPX"/>
-                            <constraint firstItem="Sy2-oj-7CX" firstAttribute="leading" secondItem="pt4-0P-uQD" secondAttribute="leading" id="Hx5-QZ-9lX"/>
-                            <constraint firstItem="pt4-0P-uQD" firstAttribute="trailing" secondItem="Sy2-oj-7CX" secondAttribute="trailing" id="TLH-Mx-zhc"/>
-                            <constraint firstItem="brc-EE-r37" firstAttribute="top" secondItem="4oc-6O-WxX" secondAttribute="bottom" constant="8" symbolic="YES" id="Zml-hs-ZNX"/>
-                            <constraint firstItem="4oc-6O-WxX" firstAttribute="leading" secondItem="IZH-Ze-Tpd" secondAttribute="leadingMargin" id="cJV-UM-8hg"/>
-                            <constraint firstItem="4oc-6O-WxX" firstAttribute="leading" secondItem="Sy2-oj-7CX" secondAttribute="leading" id="hlH-YP-ZOe"/>
-                            <constraint firstItem="Sy2-oj-7CX" firstAttribute="trailing" secondItem="4oc-6O-WxX" secondAttribute="trailing" id="pfp-F2-vp3"/>
-                            <constraint firstItem="Sy2-oj-7CX" firstAttribute="top" secondItem="pt4-0P-uQD" secondAttribute="bottom" constant="12" id="rTN-qi-cnN"/>
-                            <constraint firstItem="pt4-0P-uQD" firstAttribute="top" secondItem="HUi-C0-Ntk" secondAttribute="bottom" constant="8" symbolic="YES" id="xbQ-vf-OCS"/>
-                            <constraint firstItem="4oc-6O-WxX" firstAttribute="top" secondItem="Sy2-oj-7CX" secondAttribute="bottom" constant="8" symbolic="YES" id="yK0-Nw-8oX"/>
+                            <constraint firstItem="4oc-6O-WxX" firstAttribute="leading" secondItem="IZH-Ze-Tpd" secondAttribute="leadingMargin" id="CdQ-SZ-ErM"/>
+                            <constraint firstItem="pt4-0P-uQD" firstAttribute="top" secondItem="IZH-Ze-Tpd" secondAttribute="top" id="IJ0-lu-Tg6"/>
+                            <constraint firstItem="4oc-6O-WxX" firstAttribute="top" secondItem="Sy2-oj-7CX" secondAttribute="bottom" constant="8" symbolic="YES" id="QXy-6d-Ycn"/>
+                            <constraint firstItem="brc-EE-r37" firstAttribute="top" secondItem="4oc-6O-WxX" secondAttribute="bottom" constant="8" symbolic="YES" id="WTn-Gj-FEd"/>
+                            <constraint firstItem="Sy2-oj-7CX" firstAttribute="centerX" secondItem="pt4-0P-uQD" secondAttribute="centerX" id="X3o-3n-aVB"/>
+                            <constraint firstItem="Sy2-oj-7CX" firstAttribute="top" secondItem="pt4-0P-uQD" secondAttribute="bottom" constant="8" symbolic="YES" id="cOs-cC-FeJ"/>
+                            <constraint firstAttribute="trailing" secondItem="pt4-0P-uQD" secondAttribute="trailing" id="eQp-xe-Hhp"/>
+                            <constraint firstItem="4oc-6O-WxX" firstAttribute="leading" secondItem="Sy2-oj-7CX" secondAttribute="leading" id="ha8-mV-l7x"/>
+                            <constraint firstItem="4oc-6O-WxX" firstAttribute="trailing" secondItem="Sy2-oj-7CX" secondAttribute="trailing" id="luv-o9-Iih"/>
+                            <constraint firstItem="pt4-0P-uQD" firstAttribute="leading" secondItem="IZH-Ze-Tpd" secondAttribute="leading" id="z8e-qu-J3N"/>
                         </constraints>
                     </view>
                     <connections>
@@ -140,6 +140,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="List" id="EHb-nu-4cR"/>
+                    <connections>
+                        <segue destination="JiW-sl-4Iy" kind="showDetail" identifier="chosenMenuItem" action="showViewController:sender:" id="krL-wM-Wwh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFB-Ma-8W6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -344,7 +347,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Uza-dd-tzR">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
-                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="scrollIndicatorInsets" minX="25" minY="0.0" maxX="25" maxY="0.0"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Zg3-ok-voh">
                                     <size key="itemSize" width="339.5" height="155"/>
@@ -571,6 +574,7 @@
         <image name="pe-7s-photo-gallery_40_0_3f51b5_none.png" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="JRB-Ez-JSG"/>
         <segue reference="C3e-vN-hod"/>
     </inferredMetricsTieBreakers>
 </document>

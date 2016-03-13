@@ -17,10 +17,16 @@ class MenuListTableViewController: UITableViewController, LiquidFloatingActionBu
     var cells: [LiquidFloatingCell] = []
     var menus = [NSManagedObject]()
     var menuToSend: NSManagedObject!
+    var detailViewController: MenuViewController? = nil
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let split = self.splitViewController {
+            let controllers = split.viewControllers
+            self.detailViewController = (controllers[controllers.count-1]) as? MenuViewController
+        }
         
         
         //iquid start
@@ -39,7 +45,7 @@ class MenuListTableViewController: UITableViewController, LiquidFloatingActionBu
         cells.append(cellFactory("brandico-twitter-bird_48_0_f44024_none.png"))
         cells.append(cellFactory("brandico-facebook_48_0_f44024_none.png"))
         
-        let floatingFrame = CGRect(x: self.view.frame.width - 70, y: (self.view.frame.height - (self.tabBarController?.tabBar.frame.height)! - 60), width: 56, height: 56)
+        let floatingFrame = CGRect(x: self.view.frame.width - 70, y: (self.view.frame.height - (self.tabBarController?.tabBar.frame.height)! - 60 - 70), width: 56, height: 56)
         let bottomRightButton = createButton(floatingFrame, .Up)
         
         self.view.addSubview(bottomRightButton)
@@ -147,12 +153,9 @@ class MenuListTableViewController: UITableViewController, LiquidFloatingActionBu
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.Delete {
-            menus.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-        }
+      
         let appDelegate =
-        UIApplication.sharedApplication().delegate as! AppDelegate
+UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext
         
@@ -165,11 +168,16 @@ class MenuListTableViewController: UITableViewController, LiquidFloatingActionBu
             print("Could not save \(error), \(error.userInfo)")
         }
 
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            menus.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
     }
     
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         NSLog("You selected cell number: \(indexPath.row)!")
         menuToSend = menus[indexPath.row];
+        performSegueWithIdentifier("chosenMenuItem", sender: nil)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -189,6 +197,18 @@ class MenuListTableViewController: UITableViewController, LiquidFloatingActionBu
         cell.layer.shadowRadius = 1
         cell.layer.shadowOpacity = 0.5
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "chosenMenuItem" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                menuToSend = menus[indexPath.row]
+                let controller = (segue.destinationViewController) as! MenuViewController
+                controller.chosenMenu = menuToSend
+                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+                controller.navigationItem.leftItemsSupplementBackButton = true
+            }
+        }
     }
     
     /*

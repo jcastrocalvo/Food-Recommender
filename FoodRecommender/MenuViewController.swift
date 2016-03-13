@@ -23,10 +23,15 @@ class MenuViewController: UIViewController, LiquidFloatingActionButtonDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor(red: 105/255, green: 240/255, blue: 174/255, alpha: 1)
+        descriptionBox.backgroundColor = UIColor(red: 105/255, green: 240/255, blue: 174/255, alpha: 1)
+        descriptionBox.textColor = UIColor(red: 48/255, green: 110/255, blue: 80/255, alpha: 1)
+        titleBox.textColor = descriptionBox.textColor
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
         
         if (chosenMenu != nil){
             descriptionBox.text = chosenMenu.valueForKey("menuDescription") as? String
-            titleBox.text = chosenMenu.valueForKey("menuTitle") as? String
+            titleBox.text = chosenMenu.valueForKey("menuName") as? String
             if(chosenMenu.valueForKey("menuImage") != nil){
                 let imageData: NSData = chosenMenu.valueForKey("menuImage") as! NSData
                 imageView.image = UIImage(data: imageData)
@@ -70,7 +75,7 @@ class MenuViewController: UIViewController, LiquidFloatingActionButtonDelegate, 
     func refreshUI() {
         if (chosenMenu != nil){
             descriptionBox.text = chosenMenu.valueForKey("menuDescription") as? String
-            titleBox.text = chosenMenu.valueForKey("menuTitle") as? String
+            titleBox.text = chosenMenu.valueForKey("menuName") as? String
             if(chosenMenu.valueForKey("menuImage") != nil){
                 let imageData: NSData = chosenMenu.valueForKey("menuImage") as! NSData
                 imageView.image = UIImage(data: imageData)
