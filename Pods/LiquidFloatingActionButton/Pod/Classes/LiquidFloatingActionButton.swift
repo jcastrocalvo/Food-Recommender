@@ -53,7 +53,7 @@ public class LiquidFloatingActionButton : UIView {
         }
     }
 
-    @IBInspectable public var color: UIColor = UIColor(red: 82 / 255.0, green: 112 / 255.0, blue: 235 / 255.0, alpha: 1.0) {
+    @IBInspectable public var color: UIColor = UIColor(red: 244 / 255.0, green: 67 / 255.0, blue: 54 / 255.0, alpha: 1.0) {
         didSet {
             baseView.color = color
         }

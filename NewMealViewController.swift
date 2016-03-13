@@ -13,10 +13,17 @@ class NewMealViewController: UIViewController {
 
     @IBOutlet weak var MealTitleText: UITextField!
     @IBOutlet weak var MealDescriptionText: UITextField!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
+    var meal: NSManagedObject!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
+        if(meal == nil){
+            deleteButton.hidden = true
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -25,10 +32,10 @@ class NewMealViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prefersStatusBarHidden() -> Bool {
-        return true
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBarHidden = true
     }
-    
     override func viewWillDisappear(animated: Bool)
     {
         super.viewWillDisappear(animated)

@@ -14,8 +14,6 @@ import CoreData
 class MealsViewController: UIViewController, LiquidFloatingActionButtonDelegate, LiquidFloatingActionButtonDataSource, UICollectionViewDataSource, UICollectionViewDelegate  {
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-    var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"]
-    
     var floatingActionButton: LiquidFloatingActionButton!
     var cells: [LiquidFloatingCell] = []
     var meals = [NSManagedObject]()
@@ -25,7 +23,8 @@ class MealsViewController: UIViewController, LiquidFloatingActionButtonDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.automaticallyAdjustsScrollViewInsets = false
+        //self.collectionView.contentInset = UIEdgeInsets(top: 50, left: 10, bottom: 10, right: 10)
         //liquidbutton start
         let createButton: (CGRect, LiquidFloatingActionButtonAnimateStyle) -> LiquidFloatingActionButton = { (frame, style) in
             let floatingActionButton = LiquidFloatingActionButton(frame: frame)
@@ -46,10 +45,10 @@ class MealsViewController: UIViewController, LiquidFloatingActionButtonDelegate,
         //liquid button end
         
         
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor(red: 243/255, green: 58/255, blue: 36/255, alpha: 1)]
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 141/255, green: 198/255, blue: 63/255, alpha: 1)
-        self.tabBarController?.tabBar.barTintColor = UIColor(red: 141/255, green: 198/255, blue: 63/255, alpha: 1)
-        self.tabBarController?.tabBar.tintColor = UIColor(red: 243/255, green: 58/255, blue: 36/255, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)]
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 63/255, green: 81/255, blue: 181/255, alpha: 1)
+        self.tabBarController?.tabBar.barTintColor = UIColor(red: 63/255, green: 81/255, blue: 181/255, alpha: 1)
+        self.tabBarController?.tabBar.tintColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
@@ -132,17 +131,23 @@ class MealsViewController: UIViewController, LiquidFloatingActionButtonDelegate,
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell:CardCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! CardCollectionViewCell
         let meal = meals[indexPath.row]
-        cell.layer.shadowColor = UIColor.blackColor().CGColor
-        cell.layer.shadowOffset = CGSize(width: 0, height: 4)
-        cell.layer.shadowOpacity = 0.8
-        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.layer.bounds, cornerRadius: 2).CGPath
+        //cell.layer.masksToBounds = false
+
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
+        cell.TitleLabel.textColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
         cell.TitleLabel.text = meal.valueForKey("mealTitle") as? String
+        cell.DescriptionLabel.textColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
         cell.DescriptionLabel.text = meal.valueForKey("mealDescription") as? String
-        cell.DescriptionLabel.backgroundColor = UIColor(red: 63/255, green: 81/255, blue: 181/255, alpha: 0.9)
-        cell.backgroundColor = UIColor(red: 63/255, green: 81/255, blue: 181/255, alpha: 0.9)
+        cell.DescriptionLabel.backgroundColor = UIColor(red: 33/255, green: 150/255, blue: 243/255, alpha: 1)
+        cell.backgroundColor = UIColor(red: 33/255, green: 150/255, blue: 243/255, alpha: 1)
         //cell.Image.image = UIImage(named: "lsf-meal_48_0_f44024_none.png")
         
+        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.layer.bounds, cornerRadius: 2).CGPath
+        cell.layer.cornerRadius = 2
+        cell.layer.shadowColor = UIColor.blackColor().CGColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 3)
+        cell.layer.shadowRadius = 1
+        cell.layer.shadowOpacity = 0.5
         return cell
     }
     

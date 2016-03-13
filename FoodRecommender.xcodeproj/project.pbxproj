@@ -23,6 +23,8 @@
 		C27D59921C8A14EA00D48591 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C27D59901C8A14EA00D48591 /* DataModel.xcdatamodeld */; };
 		C2A27DC31C9352AC005E2B53 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A27DC21C9352AC005E2B53 /* CardCollectionViewCell.swift */; };
 		C2C524B41C9519360083E98E /* NewMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C524B31C9519360083E98E /* NewMealViewController.swift */; };
+		C2C524B71C952ADB0083E98E /* ion-android-delete_30_0_e0e7ee_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C2C524B51C952ADB0083E98E /* ion-android-delete_30_0_e0e7ee_none.png */; };
+		C2C524B81C952ADB0083E98E /* fa-check_30_0_e0e7ee_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C2C524B61C952ADB0083E98E /* fa-check_30_0_e0e7ee_none.png */; };
 		FF6633776757E37D84E9C9A8 /* Pods_FoodRecommender.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B411777374AC8C0C6C9469 /* Pods_FoodRecommender.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		C27D59911C8A14EA00D48591 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		C2A27DC21C9352AC005E2B53 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		C2C524B31C9519360083E98E /* NewMealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMealViewController.swift; sourceTree = "<group>"; };
+		C2C524B51C952ADB0083E98E /* ion-android-delete_30_0_e0e7ee_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ion-android-delete_30_0_e0e7ee_none.png"; sourceTree = "<group>"; };
+		C2C524B61C952ADB0083E98E /* fa-check_30_0_e0e7ee_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fa-check_30_0_e0e7ee_none.png"; sourceTree = "<group>"; };
 		C3B411777374AC8C0C6C9469 /* Pods_FoodRecommender.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodRecommender.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -74,6 +78,8 @@
 		C27697701C8A1FC300A95368 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C2C524B51C952ADB0083E98E /* ion-android-delete_30_0_e0e7ee_none.png */,
+				C2C524B61C952ADB0083E98E /* fa-check_30_0_e0e7ee_none.png */,
 				C241F6021C922646006897C9 /* lsf-meal_48_0_f44024_none.png */,
 				C241F6001C92259C006897C9 /* fa-map_30_30_f44024_none.png */,
 				C241F5FE1C922307006897C9 /* lsf-meal_30_30_f44024_none.png */,
@@ -215,7 +221,9 @@
 				C27D59821C8A146200D48591 /* Main.storyboard in Resources */,
 				C241F6031C922646006897C9 /* lsf-meal_48_0_f44024_none.png in Resources */,
 				C241F5FC1C9222D5006897C9 /* brandico-twitter-bird_48_0_f44024_none.png in Resources */,
+				C2C524B71C952ADB0083E98E /* ion-android-delete_30_0_e0e7ee_none.png in Resources */,
 				C241F6011C92259C006897C9 /* fa-map_30_30_f44024_none.png in Resources */,
+				C2C524B81C952ADB0083E98E /* fa-check_30_0_e0e7ee_none.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
