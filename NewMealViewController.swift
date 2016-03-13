@@ -21,6 +21,7 @@ class NewMealViewController: UIViewController, LiquidFloatingActionButtonDelegat
     var meal: NSManagedObject!
     var floatingActionButton: LiquidFloatingActionButton!
     var cells: [LiquidFloatingCell] = []
+    var imageWasTaken: Bool = false
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -79,13 +80,14 @@ class NewMealViewController: UIViewController, LiquidFloatingActionButtonDelegat
         if(meal == nil){
             let entity =  NSEntityDescription.entityForName("Meal",
                 inManagedObjectContext:managedContext)
-            
             let meal = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
-            let imageData: NSData = UIImageJPEGRepresentation(imageView.image!, 1)!
+            if(imageView.image != nil){
+                let imageData: NSData = UIImageJPEGRepresentation(imageView.image!, 1)!
+                meal.setValue(imageData, forKey: "mealImage")
+            }
             
             meal.setValue(MealTitleText.text, forKey: "mealTitle")
             meal.setValue(MealDescriptionText.text, forKey: "mealDescription")
-            meal.setValue(imageData, forKey: "mealImage")
             
             do {
                 try managedContext.save()
@@ -134,6 +136,19 @@ class NewMealViewController: UIViewController, LiquidFloatingActionButtonDelegat
     }
     
     @IBAction func takePhotoButton(sender: AnyObject) {
+        if(UIImagePickerController.isSourceTypeAvailable(.Camera)){
+            if(UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil){
+                imagePicker.allowsEditing = false
+                imagePicker.sourceType = .Camera
+                imagePicker.cameraCaptureMode = .Photo
+                imageWasTaken = true
+                presentViewController(imagePicker, animated: true, completion: {})
+            }
+        }else{
+            let alert = UIAlertController(title: "No camera", message: "This device has no camera available", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
         
     }
     
@@ -148,6 +163,10 @@ class NewMealViewController: UIViewController, LiquidFloatingActionButtonDelegat
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.contentMode = .ScaleAspectFit
             imageView.image = pickedImage
+            if(imageWasTaken == true){
+                let selectorToCall = Selector("imageWasSavedSuccessfully:didFinishSavingWithError:context:")
+                UIImageWriteToSavedPhotosAlbum(pickedImage, self, selectorToCall, nil)
+            }
         }
         
         dismissViewControllerAnimated(true, completion: nil)

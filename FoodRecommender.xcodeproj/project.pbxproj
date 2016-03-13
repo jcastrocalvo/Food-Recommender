@@ -121,11 +121,11 @@
 		C27D59791C8A146100D48591 /* FoodRecommender */ = {
 			isa = PBXGroup;
 			children = (
+				C2B27E831C95DC8F00173352 /* Menu */,
 				C2C524B21C9519120083E98E /* Meals */,
 				C2A27DC11C935280005E2B53 /* Helpers */,
 				C27697701C8A1FC300A95368 /* Images */,
 				C27D597A1C8A146100D48591 /* AppDelegate.swift */,
-				C27D597E1C8A146200D48591 /* MenuViewController.swift */,
 				C27D59801C8A146200D48591 /* Main.storyboard */,
 				C27D59831C8A146200D48591 /* Assets.xcassets */,
 				C27D59851C8A146200D48591 /* LaunchScreen.storyboard */,
@@ -141,6 +141,14 @@
 				C2A27DC21C9352AC005E2B53 /* CardCollectionViewCell.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		C2B27E831C95DC8F00173352 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				C27D597E1C8A146200D48591 /* MenuViewController.swift */,
+			);
+			name = Menu;
 			sourceTree = "<group>";
 		};
 		C2C524B21C9519120083E98E /* Meals */ = {

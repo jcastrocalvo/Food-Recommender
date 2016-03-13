@@ -25,7 +25,6 @@ class MealsViewController: UIViewController, LiquidFloatingActionButtonDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
-        //self.collectionView.contentInset = UIEdgeInsets(top: 50, left: 10, bottom: 10, right: 10)
         //liquidbutton start
         let createButton: (CGRect, LiquidFloatingActionButtonAnimateStyle) -> LiquidFloatingActionButton = { (frame, style) in
             let floatingActionButton = LiquidFloatingActionButton(frame: frame)
@@ -139,8 +138,8 @@ class MealsViewController: UIViewController, LiquidFloatingActionButtonDelegate,
         cell.TitleLabel.text = meal.valueForKey("mealTitle") as? String
         cell.DescriptionLabel.textColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
         cell.DescriptionLabel.text = meal.valueForKey("mealDescription") as? String
-        cell.DescriptionLabel.backgroundColor = UIColor(red: 33/255, green: 150/255, blue: 243/255, alpha: 1)
-        cell.backgroundColor = UIColor(red: 33/255, green: 150/255, blue: 243/255, alpha: 1)
+        cell.DescriptionLabel.backgroundColor = UIColor(red: 255/255, green: 64/255, blue: 129/255, alpha: 1)
+        cell.backgroundColor = UIColor(red: 255/255, green: 64/255, blue: 129/255, alpha: 1)
         //cell.Image.image = UIImage(named: "lsf-meal_48_0_f44024_none.png")
         if(meal.valueForKey("mealImage") != nil){
         let imageData: NSData = meal.valueForKey("mealImage") as! NSData
