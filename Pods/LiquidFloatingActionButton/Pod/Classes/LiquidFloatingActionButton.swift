@@ -173,7 +173,7 @@ public class LiquidFloatingActionButton : UIView {
     }
     
     private func plusKeyframe(closed: Bool) -> CAKeyframeAnimation {
-        var paths = closed ? [
+        let paths = closed ? [
                 pathPlus(CGFloat(M_PI * 0)),
                 pathPlus(CGFloat(M_PI * 0.125)),
                 pathPlus(CGFloat(M_PI * 0.25)),

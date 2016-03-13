@@ -71,7 +71,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Uza-dd-tzR">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Uza-dd-tzR">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="scrollIndicatorInsets" minX="25" minY="0.0" maxX="25" maxY="0.0"/>
@@ -148,6 +148,7 @@
                         <outlet property="collectionView" destination="Uza-dd-tzR" id="1AV-rd-bXu"/>
                         <outlet property="tabBar" destination="el4-Fi-Ly8" id="jZn-Zi-Xpe"/>
                         <segue destination="aW1-fT-LUi" kind="show" identifier="addNewMeal" id="GU3-sQ-kDh"/>
+                        <segue destination="aW1-fT-LUi" kind="show" identifier="withDataSegue" id="C3e-vN-hod"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pth-iT-HiS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -181,7 +182,10 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjC-zd-v55">
                                         <rect key="frame" x="554" y="35" width="30" height="30"/>
-                                        <state key="normal" image="fa-check_30_0_e0e7ee_none.png">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Lcv-Yx-diG"/>
+                                        </constraints>
+                                        <state key="normal" image="ion-android-done_38_0_fafafa_none.png">
                                             <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -190,35 +194,85 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3w-zI-JKG">
                                         <rect key="frame" x="500" y="35" width="30" height="30"/>
-                                        <state key="normal" image="ion-android-delete_30_0_e0e7ee_none.png">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="igq-oh-y9k"/>
+                                            <constraint firstAttribute="height" constant="30" id="mh3-Kq-FaX"/>
+                                        </constraints>
+                                        <state key="normal" image="ion-android-delete_38_0_fafafa_none.png">
                                             <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="Deletege:" destination="aW1-fT-LUi" eventType="touchUpInside" id="sS6-Yq-Py7"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fj-I5-M8Z">
+                                        <rect key="frame" x="8" y="31" width="50" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="llE-e2-nM8"/>
+                                        </constraints>
+                                        <state key="normal" image="ion-android-arrow-back_38_0_fafafa_none.png"/>
+                                        <connections>
+                                            <action selector="back:" destination="aW1-fT-LUi" eventType="touchUpInside" id="eMo-fg-0pi"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.24705882352941178" green="0.31764705882352939" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="5AD-nd-YlJ" firstAttribute="leading" secondItem="8Rw-Gs-rpc" secondAttribute="leading" id="0Kw-9F-Hah"/>
-                                    <constraint firstItem="h3w-zI-JKG" firstAttribute="top" secondItem="phG-Gf-Ele" secondAttribute="top" constant="35" id="2vv-q5-r10"/>
-                                    <constraint firstItem="8Rw-Gs-rpc" firstAttribute="trailing" secondItem="5AD-nd-YlJ" secondAttribute="trailing" id="9Md-7v-wZf"/>
-                                    <constraint firstItem="5AD-nd-YlJ" firstAttribute="top" secondItem="h3w-zI-JKG" secondAttribute="bottom" constant="44" id="DRF-B5-h9g"/>
-                                    <constraint firstItem="8Rw-Gs-rpc" firstAttribute="leading" secondItem="phG-Gf-Ele" secondAttribute="leadingMargin" id="QO5-vQ-G8o"/>
-                                    <constraint firstItem="5AD-nd-YlJ" firstAttribute="trailing" secondItem="phG-Gf-Ele" secondAttribute="trailingMargin" id="UdH-MI-bx0"/>
-                                    <constraint firstAttribute="trailing" secondItem="bjC-zd-v55" secondAttribute="trailing" constant="16" id="cQm-b3-3Jb"/>
-                                    <constraint firstItem="8Rw-Gs-rpc" firstAttribute="top" secondItem="5AD-nd-YlJ" secondAttribute="bottom" constant="45" id="nzD-gA-JWH"/>
-                                    <constraint firstItem="bjC-zd-v55" firstAttribute="leading" secondItem="h3w-zI-JKG" secondAttribute="trailing" constant="24" id="sKg-rF-Ujf"/>
-                                    <constraint firstItem="h3w-zI-JKG" firstAttribute="top" secondItem="bjC-zd-v55" secondAttribute="top" id="wcc-CQ-9IT"/>
+                                    <constraint firstItem="9fj-I5-M8Z" firstAttribute="centerY" secondItem="h3w-zI-JKG" secondAttribute="centerY" id="7Ng-Ih-R9L"/>
+                                    <constraint firstItem="5AD-nd-YlJ" firstAttribute="leading" secondItem="9fj-I5-M8Z" secondAttribute="leading" id="86b-T5-xdm"/>
+                                    <constraint firstItem="5AD-nd-YlJ" firstAttribute="trailing" secondItem="8Rw-Gs-rpc" secondAttribute="trailing" id="M2t-fD-s7P"/>
+                                    <constraint firstItem="5AD-nd-YlJ" firstAttribute="top" secondItem="9fj-I5-M8Z" secondAttribute="bottom" constant="40" id="OAF-B4-lEh"/>
+                                    <constraint firstItem="bjC-zd-v55" firstAttribute="leading" secondItem="h3w-zI-JKG" secondAttribute="trailing" constant="24" id="RPq-3w-cBf"/>
+                                    <constraint firstItem="9fj-I5-M8Z" firstAttribute="leading" secondItem="phG-Gf-Ele" secondAttribute="leadingMargin" id="RUE-7f-hV5"/>
+                                    <constraint firstItem="8Rw-Gs-rpc" firstAttribute="top" secondItem="5AD-nd-YlJ" secondAttribute="bottom" constant="45" id="YMP-9E-mqK"/>
+                                    <constraint firstItem="bjC-zd-v55" firstAttribute="bottom" secondItem="h3w-zI-JKG" secondAttribute="bottom" id="Yhj-IY-y3T"/>
+                                    <constraint firstItem="8Rw-Gs-rpc" firstAttribute="trailing" secondItem="phG-Gf-Ele" secondAttribute="trailingMargin" id="ZhR-MW-UNU"/>
+                                    <constraint firstAttribute="trailing" secondItem="bjC-zd-v55" secondAttribute="trailing" constant="16" id="bxI-hY-dwr"/>
+                                    <constraint firstItem="9fj-I5-M8Z" firstAttribute="top" secondItem="phG-Gf-Ele" secondAttribute="top" constant="31" id="lDf-TM-EhI"/>
+                                    <constraint firstItem="5AD-nd-YlJ" firstAttribute="leading" secondItem="8Rw-Gs-rpc" secondAttribute="leading" id="x7c-WY-i5l"/>
+                                    <constraint firstItem="h3w-zI-JKG" firstAttribute="top" secondItem="bjC-zd-v55" secondAttribute="top" id="xfD-PL-cd6"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IwG-Dq-zGk">
+                                <rect key="frame" x="443" y="314" width="137" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="137" id="SV7-Fu-EtS"/>
+                                    <constraint firstAttribute="height" constant="110" id="oJh-cm-bQS"/>
+                                </constraints>
+                                <state key="normal" image="fa-camera_40_0_3f51b5_none.png"/>
+                                <connections>
+                                    <action selector="takePhotoButton:" destination="aW1-fT-LUi" eventType="touchUpInside" id="xV7-0F-KeC"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q3X-MK-QbK">
+                                <rect key="frame" x="20" y="314" width="415" height="229"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGk-wo-SBb">
+                                <rect key="frame" x="443" y="432" width="137" height="111"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="111" id="zpe-Di-ViL"/>
+                                </constraints>
+                                <state key="normal" image="pe-7s-photo-gallery_40_0_3f51b5_none.png"/>
+                                <connections>
+                                    <action selector="useGalleryButton:" destination="aW1-fT-LUi" eventType="touchUpInside" id="A93-2Q-Dbi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="phG-Gf-Ele" secondAttribute="trailing" id="IOr-un-csr"/>
-                            <constraint firstItem="DtO-XC-p9s" firstAttribute="top" secondItem="phG-Gf-Ele" secondAttribute="bottom" constant="255" id="IvM-L6-OUO"/>
-                            <constraint firstItem="phG-Gf-Ele" firstAttribute="leading" secondItem="Dk2-QZ-NhF" secondAttribute="leading" id="dtq-aX-pTh"/>
-                            <constraint firstItem="phG-Gf-Ele" firstAttribute="top" secondItem="Dk2-QZ-NhF" secondAttribute="top" id="xCj-PR-S3d"/>
+                            <constraint firstAttribute="trailing" secondItem="phG-Gf-Ele" secondAttribute="trailing" id="3AP-xk-DRK"/>
+                            <constraint firstItem="DtO-XC-p9s" firstAttribute="top" secondItem="dGk-wo-SBb" secondAttribute="bottom" constant="8" symbolic="YES" id="3Te-cb-4ZI"/>
+                            <constraint firstItem="dGk-wo-SBb" firstAttribute="top" secondItem="IwG-Dq-zGk" secondAttribute="bottom" constant="8" symbolic="YES" id="AL1-jG-jlQ"/>
+                            <constraint firstItem="phG-Gf-Ele" firstAttribute="top" secondItem="Dk2-QZ-NhF" secondAttribute="top" id="H7b-ra-pG6"/>
+                            <constraint firstItem="dGk-wo-SBb" firstAttribute="trailing" secondItem="IwG-Dq-zGk" secondAttribute="trailing" id="L1S-PU-B6H"/>
+                            <constraint firstItem="DtO-XC-p9s" firstAttribute="top" secondItem="Q3X-MK-QbK" secondAttribute="bottom" constant="8" symbolic="YES" id="NE3-vI-JIg"/>
+                            <constraint firstItem="dGk-wo-SBb" firstAttribute="leading" secondItem="IwG-Dq-zGk" secondAttribute="leading" id="Oyl-Za-pZr"/>
+                            <constraint firstItem="phG-Gf-Ele" firstAttribute="leading" secondItem="Dk2-QZ-NhF" secondAttribute="leading" id="QlR-xd-HbP"/>
+                            <constraint firstItem="Q3X-MK-QbK" firstAttribute="leading" secondItem="Dk2-QZ-NhF" secondAttribute="leadingMargin" id="Tb9-ei-6d2"/>
+                            <constraint firstItem="IwG-Dq-zGk" firstAttribute="leading" secondItem="Q3X-MK-QbK" secondAttribute="trailing" constant="8" symbolic="YES" id="Xb3-rS-PKG"/>
+                            <constraint firstItem="Q3X-MK-QbK" firstAttribute="top" secondItem="phG-Gf-Ele" secondAttribute="bottom" constant="18" id="ZXl-nJ-kTj"/>
+                            <constraint firstItem="Q3X-MK-QbK" firstAttribute="top" secondItem="IwG-Dq-zGk" secondAttribute="top" id="duQ-5N-Gu1"/>
+                            <constraint firstItem="IwG-Dq-zGk" firstAttribute="trailing" secondItem="Dk2-QZ-NhF" secondAttribute="trailingMargin" id="jqR-UY-3Mn"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -228,6 +282,7 @@
                         <outlet property="MealTitleText" destination="5AD-nd-YlJ" id="Rqc-LU-rLe"/>
                         <outlet property="addButton" destination="bjC-zd-v55" id="rkA-qP-Yo9"/>
                         <outlet property="deleteButton" destination="h3w-zI-JKG" id="8Wc-66-cgx"/>
+                        <outlet property="imageView" destination="Q3X-MK-QbK" id="Ra5-4j-Lvj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rDE-Px-jrh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -314,9 +369,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fa-check_30_0_e0e7ee_none.png" width="30" height="30"/>
+        <image name="fa-camera_40_0_3f51b5_none.png" width="40" height="40"/>
         <image name="fa-map_30_30_f44024_none.png" width="90" height="90"/>
-        <image name="ion-android-delete_30_0_e0e7ee_none.png" width="30" height="30"/>
+        <image name="ion-android-arrow-back_38_0_fafafa_none.png" width="38" height="38"/>
+        <image name="ion-android-delete_38_0_fafafa_none.png" width="38" height="38"/>
+        <image name="ion-android-done_38_0_fafafa_none.png" width="38" height="38"/>
         <image name="lsf-meal_30_30_f44024_none.png" width="90" height="90"/>
+        <image name="pe-7s-photo-gallery_40_0_3f51b5_none.png" width="40" height="40"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="C3e-vN-hod"/>
+    </inferredMetricsTieBreakers>
 </document>

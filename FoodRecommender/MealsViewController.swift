@@ -19,6 +19,7 @@ class MealsViewController: UIViewController, LiquidFloatingActionButtonDelegate,
     var meals = [NSManagedObject]()
     @IBOutlet var tabBar: UIView!
     @IBOutlet var collectionView: UICollectionView!
+    var mealToSend: NSManagedObject!
     
     
     override func viewDidLoad() {
@@ -141,6 +142,10 @@ class MealsViewController: UIViewController, LiquidFloatingActionButtonDelegate,
         cell.DescriptionLabel.backgroundColor = UIColor(red: 33/255, green: 150/255, blue: 243/255, alpha: 1)
         cell.backgroundColor = UIColor(red: 33/255, green: 150/255, blue: 243/255, alpha: 1)
         //cell.Image.image = UIImage(named: "lsf-meal_48_0_f44024_none.png")
+        if(meal.valueForKey("mealImage") != nil){
+        let imageData: NSData = meal.valueForKey("mealImage") as! NSData
+        cell.Image.image = UIImage(data: imageData)
+        }
         
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.layer.bounds, cornerRadius: 2).CGPath
         cell.layer.cornerRadius = 2
@@ -153,7 +158,18 @@ class MealsViewController: UIViewController, LiquidFloatingActionButtonDelegate,
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         // handle tap events
+        mealToSend = meals[indexPath.item] as NSManagedObject
         print("You selected cell #\(indexPath.item)!")
+        performSegueWithIdentifier("withDataSegue", sender: nil)
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "withDataSegue")
+        {
+            let vc = segue.destinationViewController as! NewMealViewController
+            vc.meal = mealToSend
+        }
     }
 }
 

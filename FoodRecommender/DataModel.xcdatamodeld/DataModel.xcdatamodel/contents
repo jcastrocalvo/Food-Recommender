@@ -2,7 +2,7 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
     <entity name="Meal" representedClassName=".Meal" syncable="YES">
         <attribute name="mealDescription" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="mealImagePath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mealImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="mealTitle" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
